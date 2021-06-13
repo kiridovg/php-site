@@ -2,24 +2,20 @@
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 
-$templates = 'views/home.php';
-$layout = 'views/layout.php';
+include_once '../autoloader.php';
+$autoloader = new Autoloader();
+$autoloader->load('..\\Framework\\Render\\RenderInterface');
+$autoloader->load('..\\Framework\\Render\\Render');
+
+$goods = json_decode(file_get_contents('../db.txt'), true);
+$templates = 'views/productlist';
+$layout = 'views/layout';
 $params = [
-    "templates" => "views/home.php",
     "id" => "123 ",
     "name" => "Kirill",
+    "title" => "Список товаров",
+    "goods" => $goods,
 ];
 
-
-function render($templates, $params, $layout)
-{
-    if (is_file($templates) && is_file($layout)) {
-        ob_start();
-        extract($params);
-        include $templates;
-        return ob_get_clean();
-    }
-    return false;
-}
-
-echo render($templates, $params,  $layout);
+$render = New Render();
+echo $render->render($templates, $params,  $layout);
