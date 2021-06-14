@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<?php include 'header.php'?>
+<?php include 'header.php' ?>
 <?php include $template?>
-<?php include 'footer.php'?>
+<?php include 'footer.php' ?>
 </body>
 </html>
