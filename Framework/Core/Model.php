@@ -2,9 +2,9 @@
 
 namespace App\Core;
 
-class Model {
-
-    function get_id(){
-
+class Model
+{
+    public function get_data()
+    {
     }
 }

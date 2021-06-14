@@ -9,7 +9,7 @@ class View{
         if (is_array($params)) {
             extract($params);
         }
-        include 'views/' . $layout;
+        include '../App/View/Layouts/' . $layout;
     }
 
 
