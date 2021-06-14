@@ -1,8 +1,16 @@
 <?php
+
+namespace App\Core;
+
 class View{
 
-    function create_view($content_view, $template_view, $data = null){
-        include 'Core'.$template_view;
+    public function render(string $template, array $params, string $layout)
+    {
+        if (is_array($params)) {
+            extract($params);
+        }
+        include 'views/' . $layout;
     }
+
 
 }
