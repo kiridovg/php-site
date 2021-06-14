@@ -9,7 +9,7 @@ use App\Core\View;
 include_once '../vendor/autoload.php';
 
 $goods = json_decode(file_get_contents('../db.txt'), true);
-$templates = 'productlist.php';
+$templates = '../App/View/Templates/productlist.php';
 $layout = 'layout.php';
 $params = [
     "id" => "123 ",
