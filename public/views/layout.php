@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php include 'header.php'?>
-<?php include "$templates"?>
+<?php include $template?>
 <?php include 'footer.php'?>
 </body>
 </html>
