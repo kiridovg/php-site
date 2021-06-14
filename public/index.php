@@ -1,17 +1,16 @@
 <?php
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
 
-include_once '../autoloader.php';
-$autoloader = new Autoloader([
-    'App\\' => 'Framework/',
-]);
-$autoloader->load('..\\App\\Render\\RenderInterface');
-$autoloader->load('..\\App\\Render\\Render');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
+use App\Core\View;
+
+include_once '../vendor/autoload.php';
 
 $goods = json_decode(file_get_contents('../db.txt'), true);
-$templates = 'views/productlist';
-$layout = 'views/layout';
+$templates = 'productlist.php';
+$layout = 'layout.php';
 $params = [
     "id" => "123 ",
     "name" => "Kirill",
@@ -19,5 +18,5 @@ $params = [
     "goods" => $goods,
 ];
 
-$render = New Render();
-echo $render->render($templates, $params,  $layout);
+$render = New View();
+$render->render($templates, $params,  $layout);
