@@ -1,10 +1,7 @@
 <?php
 
-namespace App\Core;
+namespace Framework\Core;
 
 class Model
 {
-    public function get_data()
-    {
-    }
 }
