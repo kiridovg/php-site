@@ -8,12 +8,14 @@
     ],
     "require": {
         "friendsofphp/php-cs-fixer": "^3.0",
-        "squizlabs/php_codesniffer": "^3.6"
+        "squizlabs/php_codesniffer": "^3.6",
+        "ext-pdo": "*"
     },
     "description": "",
     "autoload": {
         "psr-4": {
-            "App\\": "Framework/"
+            "Framework\\": "Framework/",
+            "App\\": "App/"
         }
     }
 }
