@@ -3,10 +3,11 @@
         <div class="my-3 p-3">
             <h2 class="display-5">Список товаров</h2>
             <?php
-            foreach ($goods as $good){
-                echo "<p class='id'>Номер: ${good['id']}</p></br>";
-                echo "<p class='name'>Название: ${good['name']}</p></br>";
-                echo "<p class='description'>Описание: ${good['description']}</p></br>";
+            foreach ($params as $good){
+                echo "<p class='id'>Номер: ${good['Id']}</p></br>";
+                echo "<p class='name'>Название: ${good['Name']}</p></br>";
+                echo "<p class='description'>Цена: ${good['Price']}</p></br>";
+                echo "<p class='description'>Количество: ${good['Count']}</p></br>";
 
             }
             ?>

@@ -1,0 +1,21 @@
+{
+    "name": "kiridovg/phpsite",
+    "authors": [
+        {
+            "name": "Kirill Dovganyuk",
+            "email": "kiridovg@gmail.com"
+        }
+    ],
+    "require": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "squizlabs/php_codesniffer": "^3.6",
+        "ext-pdo": "*"
+    },
+    "description": "",
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "Framework/",
+            "App\\": "App/"
+        }
+    }
+}
