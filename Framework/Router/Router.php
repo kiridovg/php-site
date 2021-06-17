@@ -6,21 +6,19 @@ class Router
 {
     private array $route = [];
 
-
-    public function get(string $url, $contoller)
+    public function link(string $url, $controller)
     {
         $url = '/^' . str_replace('/', '\/', $url) . '$/';
-        $this->route[$url] = $contoller;
+        $this->route[$url] = $controller;
     }
 
     public function run()
     {
         $url = $this->getUrl();
-        foreach ($this->route as $pattern => $contoller) {
+        foreach ($this->route as $pattern => $controller) {
             if (preg_match($pattern, $url, $param)) {
-                $controller = new $contoller[0]();
-                $contoller[0] = $controller;
-                return call_user_func($contoller, $param[0]);
+                $controller[0] = new $controller[0]();
+                return call_user_func($controller, $param[0]);
             }
         }
     }

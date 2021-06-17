@@ -2,10 +2,8 @@
 namespace App\Controller;
 
 use App\Mapper\ProductMapper;
-use App\Model\ProductModel;
-use Framework\Core\View;
 use Framework\Core\Controller;
-use Framework\Database\Database;
+use Framework\Core\View;
 
 class Product extends Controller
 {
@@ -23,9 +21,9 @@ class Product extends Controller
 
     public function getProductById($id)
     {
-        $this->product = new ProductModel();
+        $this->product = new ProductMapper();
         $params = $this->product->getOneProduct($id);
-        return $this->view->render('product_one.php', $params, 'site.php');
+        return $this->view->render('../App/View/Templates/productlist.php', $params, 'layout.php');
     }
 
 }
