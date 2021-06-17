@@ -10,7 +10,10 @@ include_once '../vendor/autoload.php';
 
 $goods = json_decode(file_get_contents('../db.txt'), true);
 
-$router = New Router();
-
-$router->get('/', [App\Controller\Product::class, 'getProductList']);
+$router = new Router();
+$router->link('/', [App\Controller\Product::class, 'getProductList']);
+$router->link('/login', [App\Controller\Login::class, 'login']);
+$router->link('/login/authentication', [App\Controller\Login::class, 'authorization']);
+$router->link('/login/logout', [App\Controller\Login::class, 'logout']);
 $router->run();
+
