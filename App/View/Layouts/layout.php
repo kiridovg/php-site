@@ -13,4 +13,5 @@
 <?php include $template?>
 <?php include 'footer.php' ?>
 </body>
+<script src="../../../public/js/productAPI.js"></script>
 </html>
