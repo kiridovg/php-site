@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Mapper\ProductMapper;
@@ -28,5 +29,4 @@ class Product extends Controller
         $params = $this->product->getAllProduct();
         print_r(json_encode($params));
     }
-
 }
