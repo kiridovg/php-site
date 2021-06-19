@@ -1,14 +1,13 @@
 <?php
+
 namespace App\Controller;
 
-use App\Mapper\ProductMapper;
 use Framework\Authentication\Authentication;
 use Framework\Core\Controller;
 use Framework\Core\View;
 
 class Login extends Controller
 {
-
     public Authentication $authentication;
 
     public View $view;
@@ -44,5 +43,4 @@ class Login extends Controller
         $this->authentication->logOut();
         $this->register();
     }
-
 }

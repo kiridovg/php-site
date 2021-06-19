@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Mapper\ProductMapper;
@@ -11,7 +12,10 @@ class Product extends Controller
 
     public View $view;
 
-
+    public function startAPI()
+    {
+        return $this->view->render('../App/View/Templates/productlist.php', null, 'layout.php');
+    }
     public function getProductList()
     {
         $this->product = new ProductMapper();
@@ -19,11 +23,10 @@ class Product extends Controller
         return $this->view->render('../App/View/Templates/productlist.php', $params, 'layout.php');
     }
 
-    public function getProductById($id)
+    public function getProductListAPI()
     {
         $this->product = new ProductMapper();
-        $params = $this->product->getOneProduct($id);
-        return $this->view->render('../App/View/Templates/productlist.php', $params, 'layout.php');
+        $params = $this->product->getAllProduct();
+        print_r(json_encode($params));
     }
-
 }

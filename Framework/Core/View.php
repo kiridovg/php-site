@@ -2,8 +2,8 @@
 
 namespace Framework\Core;
 
-class View{
-
+class View
+{
     public function render(string $template, array $params = null, string $layout)
     {
         if (is_array($params)) {
@@ -11,6 +11,4 @@ class View{
         }
         include '../App/View/Layouts/' . $layout;
     }
-
-
 }
