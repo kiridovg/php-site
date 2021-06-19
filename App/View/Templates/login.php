@@ -1,8 +1,7 @@
 <div class="row text-center mt-3 mb-3">
     <div class="col-md-8 offset-md-2">
         <div class="form-sign mt-3">
-
-            <form method="post" action="login/authentication">
+            <form method="post" action="/login/authentication">
                 <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
                 <label for="inputLogin" class="visually-hidden">Login</label>
                 <input type="login" name="login" id="login" class="form-control" placeholder="Login" required=""
