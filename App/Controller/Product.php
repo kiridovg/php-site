@@ -12,15 +12,21 @@ class Product extends Controller
 
     public View $view;
 
-    public function startAPI()
+    public function getProductID()
+    {
+        return $this->view->render('../App/View/Templates/productid.php', null, 'layout.php');
+    }
+
+    public function getProductList()
     {
         return $this->view->render('../App/View/Templates/productlist.php', null, 'layout.php');
     }
-    public function getProductList()
+
+    public function getProductIdAPI($id)
     {
         $this->product = new ProductMapper();
-        $params = $this->product->getAllProduct();
-        return $this->view->render('../App/View/Templates/productlist.php', $params, 'layout.php');
+        $params = $this->product->getProductID($id);
+        print_r(json_encode($params));
     }
 
     public function getProductListAPI()
