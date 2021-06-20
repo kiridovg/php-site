@@ -6,12 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php $title?></title>
+    <script src="../../../public/js/app.js" defer></script>
+    <link rel="stylesheet" type="text/css"  href="../../../public/css/app.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <body>
 <?php include 'header.php' ?>
-<?php include $template?>
+<div id="app">
+    <?php include $template?>
+</div>
 <?php include 'footer.php' ?>
 </body>
-<script src="../../../public/js/productAPI.js"></script>
 </html>
