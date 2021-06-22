@@ -1,44 +1,38 @@
 <template>
-  <div class="col-mb-3 mb-4">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" width="100%" height="225" src="/../../../img.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
-        <div class="">
-          <p class="card-text">{{price}}</p>
+  <div class="product">
+    <div class="col-mb-3 mb-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" width="100%" height="225" src="/../../../img.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ product_data.name }}</h5>
+          <div class="">
+            <p class="card-text">{{ product_data.price }}</p>
+          </div>
+          <a href="/product" class="btn btn-primary" @click="sendid">Купить</a>
         </div>
-        <a href="#" class="btn btn-primary" :href="'/product/'+id+'/'">Купить</a>
       </div>
     </div>
-
   </div>
-
 </template>
 
 <script>
 export default {
   name: "product",
   props: {
-    id: {
-      type: String,
-      require: true
-    },
-    name: {
-      type: String,
-      required: true
-    },
-    price: {
-      type: String,
-      require: true
-    },
-    count: {
-      type: String,
-      require: true
-    },
+    product_data:{
+      type: Object,
+      default(){
+        return{}
+      }
+    }
   },
+  data() {
+    return {}
+  },
+
   methods: {
-    setId(id) {
-      this.$root.$emit('setId', id);
+    sendid(){
+      eventBus.$emit('upid', this.product_data.id);
     }
   }
 }

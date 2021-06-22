@@ -25,9 +25,17 @@ class Product extends Controller
     public function getProductIdAPI($id)
     {
         $this->product = new ProductMapper();
-        $params = $this->product->getProductID($id);
-        print_r(json_encode($params));
+        $params = $this->product->getAllProduct();
+        print_r(json_encode([$params[$id[0]]]));
     }
+
+    public function getProductIdAPIl($id)
+    {
+            $this->product = new ProductMapper();
+            $params = $this->product->getsortProduct($id[0]);
+            print_r(json_encode($params));
+    }
+
 
     public function getProductListAPI()
     {

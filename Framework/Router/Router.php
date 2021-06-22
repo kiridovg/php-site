@@ -18,7 +18,8 @@ class Router
         foreach ($this->route as $pattern => $controller) {
             if (preg_match($pattern, $url, $param)) {
                 $controller[0] = new $controller[0]();
-                return call_user_func($controller, $param[0]);
+                array_shift($param);
+                return call_user_func($controller, $param);
             }
         }
     }
