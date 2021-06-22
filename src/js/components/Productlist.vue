@@ -1,36 +1,35 @@
 <template>
-    <div class="container mt-5 mb-5">
-      <div class="row row-cols-sm-3">
-        <product v-for="product in products" :key="product.id"
-                 :id="product.id"
-                 :name="product.name"
-                 :price="product.price"
-                 :count="product.count"
-        >
-        </product>
-      </div>
+  <div class="container mt-5 mb-5">
+    <productsort @sort="sorti"/>
+    <div class="row row-cols-sm-3">
+      <product
+          v-for="product in products" :key="product.id"
+          :product_data="product"
+      />
     </div>
+  </div>
 </template>
 
 <script>
 import product from "./Product.vue";
+import productsort from "./ProductSort.vue";
 
 export default {
-  name: "product_list",
-  data(){
-    return{
+  name: "productlist",
+  data() {
+
+    return {
+      sort: 'idASC',
       products: {},
     }
   },
   created() {
-    this.products = this.getProducts().then((products) => {
-      this.products = products;
-    });
+    this.sorti(this.sort);
   },
-  components: {product},
+  components: {product, productsort},
   methods: {
-    getProducts: async () => {
-      let response = await fetch(`/api`, {
+    getProducts: async (sort) => {
+      let response = await fetch(`/api/${sort}/`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -39,6 +38,11 @@ export default {
       const products = response.json();
       return products;
     },
+    sorti(type) {
+      this.products = this.getProducts( this.sort = type).then((products) => {
+        this.products = products;
+      });
+    }
   },
 }
 </script>
