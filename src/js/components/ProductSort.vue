@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex mb-5">
+  <div class="d-flex mb-5 ">
     <a class="btn btn-primary mr-3" @click="sort('priceASC')">Цена ↑</a>
     <a class="btn btn-primary mr-3" @click="sort('priceDESC')">Цена ↓</a>
     <a class="btn btn-primary mr-3" @click="sort('idASC')">ID ↑</a>
