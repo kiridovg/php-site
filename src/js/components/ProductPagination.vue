@@ -1,5 +1,5 @@
 <template>
-  <button :class="'btn btn-primary mx-2'" @click="thisPage(page)">{{page}}</button>
+  <a :class="'btn btn-primary mx-2'" @click="thisPage(page)">{{page}}</a>
 </template>
 
 <script>
